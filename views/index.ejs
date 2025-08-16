@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My To-Do Application</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+    <h1>My To-Do Application</h1>
+    <h2>Todo Manager</h2>
+
+    <h3>Overdue (<%= overdue.length %>)</h3>
+    <% if (overdue.length===0) { %>
+        <p>No tasks here 🟢</p>
+        <% } else { %>
+            <%- include('todos.ejs', { todos: overdue }) %>
+                <% } %>
+
+                    <h3>Due Today (<%= dueToday.length %>)</h3>
+                    <% if (dueToday.length===0) { %>
+                        <p>No tasks here 🟢</p>
+                        <% } else { %>
+                            <%- include('todos.ejs', { todos: dueToday }) %>
+                                <% } %>
+
+                                    <h3>Due Later (<%= dueLater.length %>)</h3>
+                                    <% if (dueLater.length===0) { %>
+                                        <p>No tasks here 🟢</p>
+                                        <% } else { %>
+                                            <%- include('todos.ejs', { todos: dueLater }) %>
+                                                <% } %>
+</body>
+
+</html>
